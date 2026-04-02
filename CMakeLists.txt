@@ -18,9 +18,9 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(libilbc
-        VERSION 3.0.4
+        VERSION 3.1.0
         DESCRIPTION "WebRTC's implementation of the Internet Low Bitrate Codec (iLBC)"
-        HOMEPAGE_URL "https://github.com/TimothyGu/libilbc"
+        HOMEPAGE_URL "https://github.com/mal359/libilbc"
         LANGUAGES C CXX)
 
 include(CheckCSourceCompiles)
@@ -48,19 +48,15 @@ set(CMAKE_C_VISIBILITY_PRESET hidden)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 if((CMAKE_C_COMPILER_ID STREQUAL "GNU") OR
    (CMAKE_C_COMPILER_ID MATCHES "Clang" AND CMAKE_C_COMPILER_FRONTEND_VARIANT STREQUAL "GNU"))
-    set(CMAKE_C_FLAGS "-Wall -Wextra -Wmissing-prototypes -Wstrict-prototypes -Wno-unused-parameter -fno-strict-aliasing")
-    set(CMAKE_C_FLAGS_DEBUG "-g")
-    set(CMAKE_C_FLAGS_RELEASE "-O2")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 endif()
 if((CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
    (CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "GNU"))
-    set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unused-parameter -fno-strict-aliasing")
-    set(CMAKE_CXX_FLAGS_DEBUG "-g")
-    set(CMAKE_CXX_FLAGS_RELEASE "-O2")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 endif()
 
 if(CMAKE_C_COMPILER_ID STREQUAL "MSVC")
