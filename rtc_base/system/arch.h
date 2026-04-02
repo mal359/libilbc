@@ -19,7 +19,7 @@
 //   https://www.agner.org/optimize/calling_conventions.pdf
 //   https://sourceforge.net/p/predef/wiki/Architectures/
 //   or with gcc, run: "echo | gcc -E -dM -"
-#if defined(_M_X64) || defined(__x86_64__)
+#if defined(_M_X64) || defined(__x86_64__) || defined(__x86_64) || defined(__amd64__) || defined(__amd64)
 #define WEBRTC_ARCH_X86_FAMILY
 #define WEBRTC_ARCH_X86_64
 #define WEBRTC_ARCH_64_BITS
@@ -28,7 +28,7 @@
 #define WEBRTC_ARCH_ARM_FAMILY
 #define WEBRTC_ARCH_64_BITS
 #define WEBRTC_ARCH_LITTLE_ENDIAN
-#elif defined(_M_IX86) || defined(__i386__)
+#elif defined(_M_IX86) || defined(__i386__) || defined(__i386) || defined(_X86_)
 #define WEBRTC_ARCH_X86_FAMILY
 #define WEBRTC_ARCH_X86
 #define WEBRTC_ARCH_32_BITS
@@ -49,8 +49,8 @@
 #else
 #define WEBRTC_ARCH_BIG_ENDIAN
 #endif
-#elif defined(__PPC__)
-#if defined(__PPC64__)
+#elif defined(__PPC__) || defined(__POWERPC__) || defined(_ARCH_PPC)
+#if defined(__PPC64__) || defined (_ARCH_PPC64)
 #define WEBRTC_ARCH_64_BITS
 #else
 #define WEBRTC_ARCH_32_BITS
@@ -60,6 +60,8 @@
 #else
 #define WEBRTC_ARCH_BIG_ENDIAN
 #endif
+#elif defined(__s390__) || defined(__s390x__) || defined(__zarch__)
+#define WEBRTC_ARCH_BIG_ENDIAN
 #elif defined(__sparc) || defined(__sparc__)
 #if __SIZEOF_LONG__ == 8
 #define WEBRTC_ARCH_64_BITS
@@ -88,6 +90,15 @@
 #define WEBRTC_ARCH_LITTLE_ENDIAN
 #elif defined(__EMSCRIPTEN__)
 #define WEBRTC_ARCH_32_BITS
+#define WEBRTC_ARCH_LITTLE_ENDIAN
+#elif defined(_M_IA64) || defined(__ia64__) || defined(__ia64) || defined(__itanium__)
+#define WEBRTC_ARCH_64_BITS
+#define WEBRTC_ARCH_LITTLE_ENDIAN
+#elif defined(__m68k__)
+#define WEBRTC_ARCH_32_BITS
+#define WEBRTC_ARCH_BIG_ENDIAN
+#elif defined(__alpha__) || defined(__alpha)
+#define WEBRTC_ARCH_64_BITS
 #define WEBRTC_ARCH_LITTLE_ENDIAN
 #else
 #error Please add support for your architecture in rtc_base/system/arch.h
