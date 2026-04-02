@@ -137,7 +137,7 @@ void WebRtcSpl_AnalysisQMF(const float* in_data,
                            float* filter_state2)
 {
     size_t i;
-    float k;
+    int16_t k;
     float tmp;
     float half_in1[kMaxBandFrameLength];
     float half_in2[kMaxBandFrameLength];
