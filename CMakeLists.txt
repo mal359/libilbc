@@ -242,7 +242,6 @@ set(ilbc_source_files
     common_audio/signal_processing/spl_inl.c
     common_audio/signal_processing/splitting_filter.c
     common_audio/signal_processing/spl_sqrt.c
-    common_audio/signal_processing/sqrt_of_one_minus_x_squared.c
     common_audio/signal_processing/vector_operations.c
     common_audio/signal_processing/vector_scaling_operations.c
 
