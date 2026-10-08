@@ -21,6 +21,8 @@
 #include "modules/audio_coding/codecs/ilbc/constants.h"
 #include "modules/audio_coding/codecs/ilbc/defines.h"
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 void WebRtcIlbcfix_AugmentedCbCorr(
     int16_t *target,   /* (i) Target vector */
     int16_t *buffer,   /* (i) Memory buffer */

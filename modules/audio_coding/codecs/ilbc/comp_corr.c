@@ -20,6 +20,8 @@
 
 #include "modules/audio_coding/codecs/ilbc/defines.h"
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 /*----------------------------------------------------------------*
  *  Compute cross correlation and pitch gain for pitch prediction
  *  of last subframe at given lag.

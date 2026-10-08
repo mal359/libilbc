@@ -23,6 +23,8 @@
 #include "modules/audio_coding/codecs/ilbc/constants.h"
 #include "modules/audio_coding/codecs/ilbc/defines.h"
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 /*----------------------------------------------------------------*
  *  Packet loss concealment routine. Conceals a residual signal
  *  and LP parameters. If no packet loss, update state.

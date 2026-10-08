@@ -43,6 +43,8 @@
 #include "modules/audio_coding/codecs/ilbc/swap_bytes.h"
 #endif
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 /*----------------------------------------------------------------*
  *  main encoder function
  *---------------------------------------------------------------*/

@@ -31,6 +31,8 @@
 #include "modules/audio_coding/codecs/ilbc/gain_quant.h"
 #include "modules/audio_coding/codecs/ilbc/interpolate_samples.h"
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 /*----------------------------------------------------------------*
  *  Search routine for codebook encoding and gain quantization.
  *----------------------------------------------------------------*/

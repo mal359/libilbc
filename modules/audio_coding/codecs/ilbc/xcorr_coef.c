@@ -20,6 +20,8 @@
 
 #include "modules/audio_coding/codecs/ilbc/defines.h"
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 /*----------------------------------------------------------------*
  * cross correlation which finds the optimal lag for the
  * crossCorr*crossCorr/(energy) criteria

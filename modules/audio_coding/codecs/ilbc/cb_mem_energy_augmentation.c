@@ -21,6 +21,8 @@
 #include "modules/audio_coding/codecs/ilbc/constants.h"
 #include "modules/audio_coding/codecs/ilbc/defines.h"
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 void WebRtcIlbcfix_CbMemEnergyAugmentation(
     int16_t *interpSamples, /* (i) The interpolated samples */
     int16_t *CBmem,   /* (i) The CB memory */

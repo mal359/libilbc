@@ -22,6 +22,8 @@
 #include "modules/audio_coding/codecs/ilbc/constants.h"
 #include "modules/audio_coding/codecs/ilbc/defines.h"
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 /*----------------------------------------------------------------*
  *  Function WebRtcIlbcfix_CbMemEnergy computes the energy of all
  * the vectors in the codebook memory that will be used in the

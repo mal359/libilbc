@@ -22,6 +22,8 @@
 #include "modules/audio_coding/codecs/ilbc/defines.h"
 #include "modules/audio_coding/codecs/ilbc/smooth_out_data.h"
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 /*----------------------------------------------------------------*
  * find the smoothed output data
  *---------------------------------------------------------------*/

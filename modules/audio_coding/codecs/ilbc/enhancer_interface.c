@@ -27,6 +27,8 @@
 #include "modules/audio_coding/codecs/ilbc/hp_output.h"
 #include "modules/audio_coding/codecs/ilbc/xcorr_coef.h"
 
+#include "common_audio/signal_processing/dot_product_with_scale.h"
+
 
 
 /*----------------------------------------------------------------*
