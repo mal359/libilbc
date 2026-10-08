@@ -215,7 +215,7 @@ set(ilbc_source_files
     modules/audio_coding/codecs/ilbc/window32_w32.c
     modules/audio_coding/codecs/ilbc/xcorr_coef.c
 
-    common_audio/signal_processing/auto_correlation.c
+    common_audio/signal_processing/auto_correlation.cc
     common_audio/signal_processing/auto_corr_to_refl_coef.c
     common_audio/signal_processing/copy_set_operations.c
     common_audio/signal_processing/cross_correlation.c
@@ -232,7 +232,6 @@ set(ilbc_source_files
     common_audio/signal_processing/lpc_to_refl_coef.c
     common_audio/signal_processing/min_max_operations.c
     common_audio/signal_processing/randomization_functions.c
-    common_audio/signal_processing/real_fft.c
     common_audio/signal_processing/refl_coef_to_lpc.c
     common_audio/signal_processing/resample_48khz.c
     common_audio/signal_processing/resample_by_2.c
@@ -244,6 +243,7 @@ set(ilbc_source_files
     common_audio/signal_processing/splitting_filter.c
     common_audio/signal_processing/spl_sqrt.c
     common_audio/signal_processing/sqrt_of_one_minus_x_squared.c
+    common_audio/signal_processing/vector_operations.c
     common_audio/signal_processing/vector_scaling_operations.c
 
 
@@ -262,25 +262,14 @@ elseif(MIPS32EL)
         common_audio/signal_processing/resample_by_2_mips.c)
 endif()
 
-if(MIPS32EL)
-    set(ilbc_source_files ${ilbc_source_files}
-        common_audio/signal_processing/complex_fft_mips.c)
-else()
-    set(ilbc_source_files ${ilbc_source_files}
-        common_audio/signal_processing/complex_fft.c)
-endif()
-
 if(ARM)
     set(ilbc_source_files ${ilbc_source_files}
-        common_audio/signal_processing/complex_bit_reverse_arm.S
         common_audio/third_party/spl_sqrt_floor/spl_sqrt_floor_arm.S)
 elseif(MIPS32EL)
     set(ilbc_source_files ${ilbc_source_files}
-        common_audio/signal_processing/complex_bit_reverse_mips.c
         common_audio/third_party/spl_sqrt_floor/spl_sqrt_floor_mips.c)
 else()
     set(ilbc_source_files ${ilbc_source_files}
-        common_audio/signal_processing/complex_bit_reverse.c
         common_audio/third_party/spl_sqrt_floor/spl_sqrt_floor.c)
 endif()
 
